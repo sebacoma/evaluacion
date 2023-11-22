@@ -9,12 +9,10 @@ class CreateProductosTable extends Migration
     public function up()
     {
         Schema::create('productos', function (Blueprint $table) {
-            $table->id();
             $table->string('nombre');
-            $table->text('descripcion')->nullable();
-            $table->decimal('precio', 10, 2);
-            $table->integer('stock')->unsigned()->default(0);
-            $table->timestamps();
+            $table->floatval('precio')->nullable();
+            $table->text('descripcion');
+            $table->url("img");
         });
     }
 
